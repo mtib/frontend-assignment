@@ -1,4 +1,13 @@
-h1 {
-  color: white;
-  background-color: black;
+.responsiveContainer {
+  max-width: 1400px;
+  padding: 10px;
+  font-size: 16px;
+  margin:auto;
+}
+
+html,
+body,
+#__APP_ROOT__ {
+    height: 100%;
+    font-family: Lato, sans-serif;
 }
