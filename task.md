@@ -23,6 +23,10 @@ You can create the list using vanilla JavaScript or your favourite framework (Re
 - Display in 2 columns on wider screens (1024 pixels <= width < 1400 pixels).
 - Display in 4 columns on large screens (width >= 1400 pixels). Wrap the list in a centered container with a maximum width of 1400 pixels.
 
+For inspiration/referene you can look at these 3 images:
+- https://github.com/ColourboxDevelopment/frontend-assignment/blob/master/1024.png
+- https://github.com/ColourboxDevelopment/frontend-assignment/blob/master/1800.png
+- https://github.com/ColourboxDevelopment/frontend-assignment/blob/master/mobile.png
 
 # Optional
 
