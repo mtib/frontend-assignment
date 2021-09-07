@@ -5,3 +5,5 @@ There is no single correct answer to this assignment. The important thing is jus
 
 ## How to submit
 Please either create a new Github repository or fork this. Please commit your progress in small chunks, so that we can get a climpse of how you work by checking the Git log. 
+
+You'll find the actual task [here](https://github.com/ColourboxDevelopment/frontend-assignment/blob/master/task.md)
