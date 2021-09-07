@@ -1,5 +1,5 @@
 # Create a list of users using JavaScript
-We want to display the users from https://jsonplaceholder.typicode.com/users in a simple neat list. 
+We want to display the users from https://jsonplaceholder.typicode.com/users in a simple neat list.
 
 The container should have a padding of 10 pixels in any screen resolution.
 Font size: 16px.
@@ -8,7 +8,7 @@ Each user is displayed as a line of:
 
 - A circle-shaped avatar thumbnail (just use https://via.placeholder.com/150/1F83B3 for all users) followed by 20px spacing to the right
 - The user name linked to the website (color: #222222), if the user has a website
-- The company name in parentheses (color: #999999), if there is a company in the user data.
+- The company name in parentheses (color: #999999), if there is a company in the user data
 
 Each user item must not clash with the next column, so there must be 20 pixels of space before the next column.
 
@@ -23,7 +23,7 @@ You can create the list using vanilla JavaScript or your favourite framework (Re
 - Display in 2 columns on wider screens (1024 pixels <= width < 1400 pixels).
 - Display in 4 columns on large screens (width >= 1400 pixels). Wrap the list in a centered container with a maximum width of 1400 pixels.
 
-For inspiration/referene you can look at these 3 images:
+For inspiration/reference you can look at these 3 images:
 - https://github.com/ColourboxDevelopment/frontend-assignment/blob/master/1024.png
 - https://github.com/ColourboxDevelopment/frontend-assignment/blob/master/1800.png
 - https://github.com/ColourboxDevelopment/frontend-assignment/blob/master/mobile.png
