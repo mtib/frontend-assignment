@@ -55,6 +55,7 @@ body,
   }
 
   .User {
+    /* alternative to math is to set x-padding of container to 0 in larger resolutions */
     width: calc(800px / 2 - var(--x-padding))
   }
 }

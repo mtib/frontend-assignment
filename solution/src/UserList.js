@@ -1,6 +1,8 @@
 import React from "react";
 import User from "./User";
 
+// UserList is the container for the users.
+// It also initiates the fetch on mount and stores the response.
 class UserList extends React.Component {
     constructor(props) {
         super(props);
@@ -15,6 +17,7 @@ class UserList extends React.Component {
         fetch(this.props.userEndpoint).then(data => {
             return data.json();
         }).then(json => {
+            // We only need name, website and ?company out of response:
             this.setState({
                 users: json.map(user => {
                     let simple_user = {
@@ -37,14 +40,20 @@ class UserList extends React.Component {
     }
 
     render() {
+        // If state contains error: *only* show error
         if (this.state.error != null) {
             return <div class="alert alert-danger" role="alert">
                 {this.state.error}
             </div>
         }
+
+        // Else if still loading: show loading text
         else if (this.state.users == null) {
             return <span>Loading...</span>
-        } else {
+        }
+
+        // Else user data is present: show user users
+        else {
             const users = this.state.users.map(user => {
                 return <User
                     thumbnail={user.thumbnail}
