@@ -1,4 +1,6 @@
 import React from "react";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 // Class for visualizing user data given through props.
 // Shows company iff present, links to website iff present
@@ -16,7 +18,14 @@ class User extends React.Component {
 
         let company = <span></span>
         if (this.props.company != null) {
-            company = <span className="User-company">({this.props.company})</span>
+            // Just a fun little fix for showing the full company name on hover,
+            // because long name/company mixes are truncated frequently.
+            company = <OverlayTrigger
+                key="trigger"
+                placement="top"
+                overlay={<Tooltip>{this.props.company}</Tooltip>}>
+                <span className="User-company">({this.props.company})</span>
+            </OverlayTrigger>
         }
 
         return (
