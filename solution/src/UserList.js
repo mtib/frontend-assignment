@@ -14,12 +14,18 @@ class UserList extends React.Component {
 
     componentDidMount() {
         // Fetch user data and clean up already
+        // If the data from that endpoint was used mulitple times or multiple UserLists needed
+        // to be created the fetch and cache should happen in a level above (or localStorage or
+        // a ServiceWorker)
+        // The reference to that data could be given as a props, UserLink could even request a 
+        // refresh through a props call.
         fetch(this.props.userEndpoint).then(data => {
             return data.json();
         }).then(json => {
             // We only need name, website and ?company out of response:
             this.setState({
                 users: json.map(user => {
+                    // In a real-world application this would need to be sanitized and checked more
                     let simple_user = {
                         name: user.name,
                         website: `https://${user.website}`,
@@ -33,6 +39,8 @@ class UserList extends React.Component {
                 }),
             });
         }).catch(reason => {
+            // In production we probably don't want to show the `reason` instead the type of the `reason`
+            // could be mapped to some human readable text.
             this.setState({
                 error: `Fetching users failed: ${reason}`,
             });
@@ -42,6 +50,7 @@ class UserList extends React.Component {
     render() {
         // If state contains error: *only* show error
         if (this.state.error != null) {
+            // Done like this so this.state.error could also be a Fragment
             return <div class="alert alert-danger" role="alert">
                 {this.state.error}
             </div>
@@ -54,6 +63,7 @@ class UserList extends React.Component {
 
         // Else user data is present: show user users
         else {
+            // User components don't own the data, they only access it through props
             const users = this.state.users.map(user => {
                 return <User
                     thumbnail={user.thumbnail}
@@ -62,7 +72,6 @@ class UserList extends React.Component {
                     company={user.company}
                 />
             })
-            console.log(this.state.users);
             return (
                 <div className="UserList">
                     {users}

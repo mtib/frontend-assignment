@@ -1,6 +1,7 @@
 import React from "react";
 
 // Class for visualizing user data given through props.
+// Shows company iff present, links to website iff present
 // Props: name, thumbnail, ?company, ?website
 class User extends React.Component {
     constructor(props) {
