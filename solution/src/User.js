@@ -17,7 +17,7 @@ class User extends React.Component {
         }
 
         return (
-            <div className="User d-block">
+            <div className="User d-inline-block py-3">
                 <div className="d-flex align-items-center d-block">
                     <img src={this.props.thumbnail} className="User-thumbnail flex-shrink-1" />
                     <span className="w-100 text-truncate">

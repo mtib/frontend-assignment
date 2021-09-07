@@ -19,7 +19,7 @@ class UserList extends React.Component {
                 users: json.map(user => {
                     let simple_user = {
                         name: user.name,
-                        website: user.website,
+                        website: `https://${user.website}`,
                         thumbnail: "https://via.placeholder.com/150/1F83B3",
                         company: null,
                     }
@@ -55,7 +55,7 @@ class UserList extends React.Component {
             })
             console.log(this.state.users);
             return (
-                <div className="userlist">
+                <div className="UserList">
                     {users}
                 </div>
             );

@@ -1,19 +1,23 @@
 .responsiveContainer {
-  max-width: 1400px;
-  padding: 10px;
+  --x-padding: 10px;
+  max-width: 1400px; /* desktop first */
+  width: 100%;
+  padding: var(--x-padding);
   font-size: 16px;
   margin:auto;
 }
 
 html,
 body,
-#__APP_ROOT__ {
+:root {
     height: 100%;
     font-family: Lato, sans-serif;
 }
 
 .User {
   white-space: nowrap;
+  padding-right: 20px;
+  width: calc(1400px / 4 - 2 * var(--x-padding)); /* desktop first */
 }
 
 .User-name {
@@ -28,4 +32,29 @@ body,
   width: 40px;
   border-radius: 100%;
   margin-right: 20px;
+}
+
+/* 0-1024px screen: show full-width single-column container */
+@media screen and (max-width: 1024px) {
+  .responsiveContainer {
+    max-width: 100%;
+    width: 100%
+  }
+
+  .User {
+    width: 100%;
+  }
+}
+
+/* 1024-1400px screen: show 800px wide 2-column container */
+@media screen and (max-width: 1400px) {
+
+  .responsiveContainer {
+    max-width: 800px;
+    width: 100%
+  }
+
+  .User {
+    width: calc(800px / 2 - var(--x-padding))
+  }
 }
