@@ -11,3 +11,21 @@ body,
     height: 100%;
     font-family: Lato, sans-serif;
 }
+
+.User {
+  white-space: nowrap;
+}
+
+.User-name {
+  color: #222222;
+}
+
+.User-company {
+  color: #999999;
+}
+
+.User-thumbnail {
+  width: 40px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
